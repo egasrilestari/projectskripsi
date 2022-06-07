@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prediksi Harga Rumah</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='css/images/favicon (1).ico')}}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='css/css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css/animate.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/magnific-popup.css') }}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/ionicons.min.css') }}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">Beranda</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="about" class="nav-link">Tentang</a></li>
+                    <li class="nav-item"><a href="predict" class="nav-link">Prediksi</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2 js-fullheight"
+        style="background-image:  url('static/css/images/detail1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end">
+                <div class="col-md-9 ftco-animate pb-5">
+                    <h2 class="mb-3 bread">Detail Contoh Rumah 5 Lantai</h2>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="/">Beranda <i
+                                    class="ion-ios-arrow-forward"></i></a></span> <span>Detail <i
+                                class="ion-ios-arrow-forward"></i></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 portfolio-wrap ftco-animate">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="img js-fullheight" style="background-image: url(static/css/images/land.jpg);">
+
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="text">
+                                <div class="px-0 pt-5">
+                                    <div class="desc">
+                                        <div class="top top-relative">
+                                            <span class="subheading">Contoh Kriteria</span>
+                                            <h2 class="mb-4">Luas Tanah</h2>
+                                        </div>
+                                        <div class="absolute relative">
+                                            <p>Luas tanah yang biasanya menjadi kriteria sebuah rumah <strong>5
+                                                    lantai</strong> berukuran sekitar 300 m<sup>2</sup>.
+                                                Karena harga rumah untuk satu
+                                                lantai biasanya 6 miliar dan bisa lebih dari harga itu, tergantung
+                                                pada luas tanah dan luas bangunan rumah.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 portfolio-wrap ftco-animate">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="img js-fullheight"
+                                style="background-image: url(static/css/images/building.png);">
+
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="text">
+                                <div class="px-0 pt-5">
+                                    <div class="desc">
+                                        <div class="top top-relative">
+                                            <span class="subheading">Contoh Kriteria</span>
+                                            <h2 class="mb-4">Luas Bangunan</h2>
+                                        </div>
+                                        <div class="absolute relative">
+                                            <p>Luas bangunan yang biasanya menjadi kriteria sebuah rumah <strong>5
+                                                    lantai</strong> berukuran sekitar 230 m<sup>2</sup>.
+                                                Karena harga rumah untuk satu
+                                                lantai biasanya 6 miliar dan bisa lebih dari harga itu, tergantung
+                                                pada luas tanah dan luas bangunan rumah.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 portfolio-wrap ftco-animate">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="img js-fullheight" style="background-image: url(static/css/images/bed.png);">
+
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="text">
+                                <div class="px-0 pt-5">
+                                    <div class="desc">
+                                        <div class="top top-relative">
+                                            <span class="subheading">Contoh Kriteria</span>
+                                            <h2 class="mb-4">Kamar Tidur</h2>
+                                        </div>
+                                        <div class="absolute relative">
+                                            <p>Kamar tidur pada kriteria untuk rumah <strong>5 lantai</strong> sekitar
+                                                6 sampai banyak kamar tidur disesuaikan dengan keinginan, karena
+                                                jumlah kamar tidur yang disediakan akan bergantung pada luas bangunan
+                                                dan luas tanah pada rumah.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 portfolio-wrap ftco-animate">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="img js-fullheight" style="background-image: url(static/css/images/bath.jpg);">
+
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="text">
+                                <div class="px-0 pt-5">
+                                    <div class="desc">
+                                        <div class="top top-relative">
+                                            <span class="subheading">Contoh Kriteria</span>
+                                            <h2 class="mb-4">Kamar Mandi</h2>
+                                        </div>
+                                        <div class="absolute relative">
+                                            <p>Kamar mandi pada kriteria untuk rumah <strong>5 lantai</strong> sekitar
+                                                6 sampai banyak kamar mandi disesuaikan dengan keinginan, karena
+                                                jumlah kamar mandi yang disediakan akan bergantung pada luas bangunan
+                                                dan luas tanah pada rumah.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 portfolio-wrap ftco-animate">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="img js-fullheight"
+                                style="background-image: url(static/css/images/parking.png);">
+
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="text">
+                                <div class="px-0 pt-5">
+                                    <div class="desc">
+                                        <div class="top top-relative">
+                                            <span class="subheading">Contoh Kriteria</span>
+                                            <h2 class="mb-4">Garasi</h2>
+                                        </div>
+                                        <div class="absolute relative">
+                                            <p>Garasi biasanya akan menjadi salah satu kriteria dari membeli sebuah
+                                                rumah.
+                                                Untuk rumah tipe <strong>5 lantai</strong> mempunyai sekitar 1
+                                                garasi dan muat untuk banyak kendaraan jika memiliki garasi yang luas,
+                                                karena itu tergantung dari luas bangunan dan luas tanah pada area rumah.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- <footer class="ftco-footer ftco-section">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12 text-center">
+
+					<p> -->
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    <!-- Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+						is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
+							href="https://colorlib.com" target="_blank">Colorlib</a> -->
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    <!-- </p>
+				</div>
+			</div>
+		</div>
+	</footer> -->
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg></div>
+
+
+    <script src="static/css/js/jquery.min.js"></script>
+    <script src="static/css/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="static/css/js/popper.min.js"></script>
+    <script src="static/css/js/bootstrap.min.js"></script>
+    <script src="static/css/js/jquery.easing.1.3.js"></script>
+    <script src="static/css/js/jquery.waypoints.min.js"></script>
+    <script src="static/css/js/jquery.stellar.min.js"></script>
+    <script src="static/css/js/owl.carousel.min.js"></script>
+    <script src="static/css/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/css/js/aos.js"></script>
+    <script src="static/css/js/jquery.animateNumber.min.js"></script>
+    <script src="static/css/js/scrollax.min.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="static/css/js/google-map.js"></script>
+    <script src="static/css/js/main.js"></script>
+
+</body>
+
+</html>

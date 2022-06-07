@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prediksi Harga Rumah</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='css/images/favicon (1).ico')}}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='css/css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css/animate.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/magnific-popup.css') }}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/ionicons.min.css') }}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" style="font-size: 30px;" href="/">Beranda</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="predict" style="font-size: 20px;" class="nav-link">Prediksi</a>
+                    </li>
+                    <li class="nav-item"><a href="about" style="font-size: 20px;" class="nav-link">Tentang</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('static/css/images/bg3.png');"
+        data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end">
+                <div class="col-md-9 ftco-animate pb-5">
+                    <h2 class="mb-3 bread">Hasil</h2>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="/">Beranda <i
+                                    class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"> <a href="predict">
+                                Prediksi <i class="ion-ios-arrow-forward"></i></a></span>
+                        <span>Hasil <i class="ion-ios-arrow-forward"></i></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
+        <div class="container-fluid px-0">
+            <div class="row no-gutters block-9">
+                <div class="col-md-12 order-md-last d-flex">
+                    <form action="/predict" class="bg-light p-5 contact-form" method="GET">
+                        <h1 class="mb-3 bread"> <strong>Hasil Prediksi</strong> </h1>
+                        <div class="form-group">
+                            <span> <strong>Prediksi Harga Rumah</strong> untuk daerah <strong>{{city}}</strong> dengan
+                                jumlah <strong>{{bed}}
+                                    kamar tidur,
+                                    {{bath}} kamar mandi,
+                                    {{park}} garasi, {{surface}} m<sup>2</sup> luas tanah,
+                                    {{building}} m<sup>2</sup> luas bangunan </span></strong>
+                            <br>
+                            <h2 class="subheading">{{finalData}} </h2>
+                        </div>
+
+                        <h3 class="mb-3 bread"> <strong>Rekomendasi Rumah Berdasarkan Hasil Prediksi</strong></h3>
+                        <div class="form-group">
+                            {% if row_data == [] %}
+                            <span>Maaf, rekomendasi tidak ada berdasarkan data tersebut.</span>
+
+                            {% else %}
+
+                            {% for col, row_name, row_price, row_city, row_bed, row_bath, row_park, row_sur, row_buil,
+                            row_link in zip(column_names, name, price, cityrec, bedroom, bathroom, parkingarea,
+                            surfacearea, buildingarea, link) %}
+                            <li>{{row_name}}</li>
+                            <span>
+                                <img src="static\css\images\money.png" style="width: 18px;">: {{row_price}}
+                            </span>
+                            <br>
+                            <span>
+                                <img src="static\css\images\location.png" style="width: 18px;">:
+                                {{row_city}}
+                                <img src="static\css\images\bedic.png" style="width: 18px;">:
+                                {{row_bed}}
+                                <img src="static\css\images\bath.png" style="width: 18px;">:
+                                {{row_bath}}
+                                <img src="static\css\images\garage.png" style="width: 18px;">:
+                                {{row_park}}
+                                <img src="static\css\images\search.png" style="width: 18px;">:
+                                {{row_sur}}
+                                <img src="static\css\images\office-building.png" style="width: 18px;">:
+                                {{row_buil}}
+                            </span>
+                            <br>
+                            <span><strong><a href="{{row_link}}">Informasi Lengkap</a> </strong></span>
+
+                            {% endfor %}
+
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Selesai" class="btn btn-primary py-3 px-5">
+                        </div>
+                    </form>
+
+                </div>
+
+                <!-- <div class="col-md-6 order-md-last img js-fullheight"
+                    style="background-image: url('static/css/images/house_ex3.jpg')">
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- <footer class="ftco-footer ftco-section">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12 text-center">
+
+					<p> -->
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    <!-- Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+						is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
+							href="https://colorlib.com" target="_blank">Colorlib</a> -->
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    <!-- </p>
+				</div>
+			</div>
+		</div>
+	</footer> -->
+
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg></div>
+
+
+    <script>
+        if (state == 0) {
+            valstate == "Bandung"
+        } else if (state == 1) {
+            valstate == "Banjar"
+        }
+    </script>
+    <script src="static/css/js/jquery.min.js"></script>
+    <script src="static/css/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="static/css/js/popper.min.js"></script>
+    <script src="static/css/js/bootstrap.min.js"></script>
+    <script src="static/css/js/jquery.easing.1.3.js"></script>
+    <script src="static/css/js/jquery.waypoints.min.js"></script>
+    <script src="static/css/js/jquery.stellar.min.js"></script>
+    <script src="static/css/js/owl.carousel.min.js"></script>
+    <script src="static/css/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/css/js/aos.js"></script>
+    <script src="static/css/js/jquery.animateNumber.min.js"></script>
+    <script src="static/css/js/scrollax.min.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="static/css/js/google-map.js"></script>
+    <script src="static/css/js/main.js"></script>
+
+</body>
+
+</html>
