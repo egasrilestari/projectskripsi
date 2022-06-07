@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import pickle
+import os
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
@@ -180,4 +181,4 @@ def detail5():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=os.environ.get("PORT", 8080), host='0.0.0.0', debug=True)
