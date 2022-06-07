@@ -159,26 +159,27 @@ def predict():
     else:
         return render_template('predict.html')
 
-@app.route('/detail')
-def detail():
-    return render_template('detail.html')
+# @app.route('/detail')
+# def detail():
+#     return render_template('detail.html')
 
-@app.route('/detail2')
-def detail2():
-    return render_template('detail2.html')
+# @app.route('/detail2')
+# def detail2():
+#     return render_template('detail2.html')
 
-@app.route('/detail3')
-def detail3():
-    return render_template('detail3.html')
+# @app.route('/detail3')
+# def detail3():
+#     return render_template('detail3.html')
 
-@app.route('/detail4')
-def detail4():
-    return render_template('detail4.html')
+# @app.route('/detail4')
+# def detail4():
+#     return render_template('detail4.html')
 
-@app.route('/detail5')
-def detail5():
-    return render_template('detail5.html')
+# @app.route('/detail5')
+# def detail5():
+#     return render_template('detail5.html')
 
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, port=port)
